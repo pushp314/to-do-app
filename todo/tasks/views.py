@@ -22,9 +22,9 @@ def index(request):
 	return render(request, 'tasks/list.html', context)
 
 def updateTask(request, pk):
-	task = Task.objects.get(id=pk)
+	task = Task.objects.get(id=pk) #what is id=pk
 
-	form = TaskForm(instance=task)
+	form = TaskForm(instance=task) #WHY instance = task
 
 	if request.method == 'POST':
 		form = TaskForm(request.POST, instance=task)
